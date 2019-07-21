@@ -1,0 +1,35 @@
+<!-- C\Code\mysite\elections\templates\elections\index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <table class="table table-striped">
+        <tbody>
+            <form action="1" method="get">
+                <input type="submit" class="btn", value="create", name="mybtn">
+            </form>
+            <form action="2" method="post">{% csrf_token %}
+                <select name="mood" onchange="alert(this.value)">
+                    <option value="0">분위기</option>
+                    <option value="1">밝음</option>
+                    <option value="2">잔잔</option>
+                    <option value="3">긴박</option>
+                </select>
+                <input type="submit" class="btn", value="test", name="test">
+            </form>
+        <script>
+        var mood_num = document.getElementById('mood').value;
+        mood_num.value = '-1';
+        </script>
+        <tbody>
+    </table>
+</div>
+</body>
